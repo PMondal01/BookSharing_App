@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyBookActivity"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="@drawable/mybook_background">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="বই সংযুক্তি ফর্ম"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#C4140414">
+    </TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="বইয়ের নাম"
+            android:paddingRight="4dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:inputType="text|textMultiLine"
+            android:maxLines="10"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="লেখক"
+            android:paddingRight="29dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+
+        <EditText
+            android:id="@+id/writer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="দাম"
+            android:paddingRight="45dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textMultiLine"
+            android:maxLines="10"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ফোন নং"
+            android:paddingRight="15dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+
+        <EditText
+            android:id="@+id/book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/demo_book"/>
+
+
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+
+        <Button
+            android:id="@+id/btn_choose"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="ছবি দিন"
+            android:background="#8CE4F0"
+            android:textStyle="bold"
+            android:textColor="#050500"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear book photo is mandatory"
+            android:gravity="center"
+            android:textColor="#F44336"
+            android:textStyle="bold">
+        </TextView>
+
+
+
+        <!-- <Button
+             android:id="@+id/btn_display"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="ছবি দেখুন"
+             />
+ -->
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        >
+
+
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FBB040"
+            android:layout_centerVertical="true"
+            android:textAllCaps="false"
+            android:text="বইটি যুক্ত করুন"
+            android:textSize="20dp"
+            android:textStyle="bold"
+
+
+
+
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    tools:context="com.example.boighor.LoginActivity">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="40dp">
+
+        <!-- android:layout_alignParentBottom="true"-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            >
+
+
+            <ImageView
+                android:id="@+id/ivLogLogo"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+
+                android:layout_marginBottom="55dp"
+                android:layout_marginTop="18dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo" />
+
+
+            <ImageView
+                android:id="@+id/ivSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="15dp"
+                android:contentDescription="Sign in text on registration activity"
+                android:src="@drawable/sign_in" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/email_log"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_rect"
+                android:drawableLeft="@drawable/icon_person"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/icon_person"
+                android:hint="@string/emailReg"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="15sp" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/pass_log"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_rect"
+                android:drawableLeft="@drawable/icon_password"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/icon_password"
+                android:hint="@string/passwordReg"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/tvForgotPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/forgot_password"
+                android:textColor="@color/gray" />
+
+
+            <!--<Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log in">
+            </Button>-->
+
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"/>
+
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btnsignin_gradient"
+                android:text="@string/sign_inLog"
+                android:textColor="#FFFFFF" />
+
+
+            <!-- <ImageView
+                 android:id="@+id/ivFacebook"
+                 android:layout_width="match_parent"
+                 android:layout_height="51dp"
+                 android:layout_marginTop="10dp"
+                 android:contentDescription="Social site button"
+                 android:src="@drawable/btn_twitter" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Don\'t have an account?"
+                android:textColor="#F8F8F4"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center"/>
+
+
+            <TextView
+                android:id="@+id/tvSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:text="Register here!"
+                android:textColor="#FFEB3B"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>
