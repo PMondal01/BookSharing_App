@@ -41,7 +41,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     public  void doWork()
     {
-        for(progress=20;progress<=100;progress=progress+20)
+        for(progress=20;progress<=60;progress=progress+20)
         {
             try{
                 Thread.sleep(1000);
@@ -56,7 +56,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     public void startApp()
     {
-        Intent intent=new Intent(SplashScreenActivity.this,LoginActivity.class);
+        Intent intent=new Intent(SplashScreenActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
     }

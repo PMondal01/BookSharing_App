@@ -6,22 +6,23 @@ public class Upload {
 
     private String BookName;
     private String WritterName;
-    private String Description;
+
     private String Price;
     private String imageUrl;
+    private String Number;
 
     public Upload()
     {
 
     }
 
-    public Upload(String book_name, String writer_name,String description,String price,  String imageUri)
+    public Upload(String book_name, String writer_name,String price,  String imageUri, String number)
     {
         this.BookName =book_name;
         this.WritterName=writer_name;
-        this.Description=description;
         this.Price=price;
         this.imageUrl =imageUri;
+        this.Number=number;
     }
 
     public String getBookName()
@@ -50,13 +51,7 @@ public class Upload {
         WritterName = writterName;
     }
 
-    public String getDescription() {
-        return Description;
-    }
 
-    public void setDescription(String description) {
-        Description = description;
-    }
 
     public String getPrice() {
         return Price;
@@ -64,5 +59,13 @@ public class Upload {
 
     public void setPrice(String price) {
         Price = price;
+    }
+
+    public String getNumber() {
+        return Number;
+    }
+
+    public void setNumber(String number) {
+        Number = number;
     }
 }

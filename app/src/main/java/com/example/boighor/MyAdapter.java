@@ -41,6 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Upload upload=uploadList.get(i);
         myViewHolder.textView.setText(upload.getBookName());
         myViewHolder.book_price_textview.setText(upload.getPrice());
+        myViewHolder.number_textview.setText(upload.getNumber());
         Picasso.with(context)
                 .load(upload.getImageUrl())
                 .placeholder(R.drawable.demo_book)
@@ -58,12 +59,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder  extends RecyclerView.ViewHolder {
         TextView textView;
         TextView book_price_textview;
+        TextView number_textview;
         ImageView imageView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textView=itemView.findViewById(R.id.bookname_card);
             book_price_textview=itemView.findViewById(R.id.bookprice_card);
+            number_textview=itemView.findViewById(R.id.number_card);
             imageView=itemView.findViewById(R.id.imageview_card);
 
 

@@ -18,7 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.boighor.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -38,7 +37,7 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
     private CheckBox checkBox_box;
     private EditText bname;
     private EditText wname;
-    private EditText des;
+    private EditText Number_my;
     private EditText price;
     private LinearLayout linearLayout_price;
     private DatabaseReference databaseReference;
@@ -66,7 +65,7 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
 
         bname=findViewById(R.id.book_name);
         wname=findViewById(R.id.writer_name);
-        des=findViewById(R.id.description);
+        Number_my =findViewById(R.id.mobile_number);
         price=findViewById(R.id.price);
         progressBar=findViewById(R.id.progress);
 
@@ -158,8 +157,9 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
         progressBar.setVisibility(View.VISIBLE);
         final String book_name = bname.getText().toString().trim();
         final String writer_name = wname.getText().toString().trim();
-        final String description = des.getText().toString().trim();
+        final String My_number = Number_my.getText().toString().trim();
         final String Price = price.getText().toString().trim();
+
 
 
 
@@ -178,6 +178,12 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
        if   (Price.isEmpty()) {
             price.setError("Enter Book Name");
             price.requestFocus();
+            return;
+        }
+
+        if  (My_number.isEmpty()) {
+            Number_my.setError("Enter Number");
+            Number_my.requestFocus();
             return;
         }
 
@@ -200,7 +206,7 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
                         Uri downloadUrl=uriTask.getResult();
 
 
-                        Upload upload = new Upload(book_name,writer_name,description,Price,downloadUrl.toString());
+                        Upload upload = new Upload(book_name,writer_name,Price,downloadUrl.toString(),My_number);
 
                         String uploadId = databaseReference.push().getKey();
                         databaseReference.child(uploadId).setValue(upload);
