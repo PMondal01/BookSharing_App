@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.boighor.R;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView textView_bookshelf,textView_mybook,textView_profile,textView_opinion;
     Button button_bookshelf,button_mybook,button_profile,button_opinion;
+    private long backPressedTime = 0;
 
 
     @Override
@@ -66,5 +68,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         startActivity(intent);
 
+    }
+
+    @Override
+    public void onBackPressed() {        // to prevent irritating accidental logouts
+        long t = System.currentTimeMillis();
+        if (t - backPressedTime > 1000) {    // 2 secs
+            backPressedTime = t;
+            Toast.makeText(this, "Press again to exit",
+                    Toast.LENGTH_SHORT).show();
+        } else {    // this guy is serious
+            // clean up
+            super.onBackPressed();       // bye
+        }
     }
 }

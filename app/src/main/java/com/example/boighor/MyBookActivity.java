@@ -45,6 +45,8 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
     StorageTask storageTask;
     ProgressBar progressBar;
 
+    int image_check=0;
+
 
     private static final int IMAGE_REQUEST = 1;
     /*  private static final int RESULT_OK=1;*/
@@ -143,7 +145,10 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
             imageuri = data.getData();
             Picasso.with(this).load(imageuri).into(imageView);
         }
+        image_check=image_check+1;
     }
+
+
 
 
     public String getFileExtension(Uri imageUri) {
@@ -154,11 +159,13 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
 
 
     private void saveData() {
-        progressBar.setVisibility(View.VISIBLE);
+
         final String book_name = bname.getText().toString().trim();
         final String writer_name = wname.getText().toString().trim();
         final String My_number = Number_my.getText().toString().trim();
         final String Price = price.getText().toString().trim();
+
+
 
 
 
@@ -176,16 +183,27 @@ public class MyBookActivity extends AppCompatActivity implements View.OnClickLis
         }
 
        if   (Price.isEmpty()) {
-            price.setError("Enter Book Name");
+            price.setError("বইয়ের দাম লিখুন");
             price.requestFocus();
             return;
         }
 
         if  (My_number.isEmpty()) {
-            Number_my.setError("Enter Number");
+            Number_my.setError("মোবাইল নাম্বার দিন");
             Number_my.requestFocus();
             return;
         }
+
+        if(image_check==0)
+        {
+
+
+            Toast.makeText(getApplicationContext(), "বইয়ের ছবি দিন", Toast.LENGTH_LONG).show();
+            return;
+
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
 
 
 
