@@ -2,6 +2,8 @@ package com.example.boighor;
 
 import android.widget.EditText;
 
+import com.google.firebase.database.Exclude;
+
 public class Upload {
 
     private String BookName;
@@ -10,6 +12,8 @@ public class Upload {
     private String Price;
     private String imageUrl;
     private String Number;
+
+    private String key;
 
     public Upload()
     {
@@ -67,5 +71,16 @@ public class Upload {
 
     public void setNumber(String number) {
         Number = number;
+    }
+
+
+    @Exclude
+    public String getKey() {
+        return key;
+    }
+
+    @Exclude
+    public void setKey(String key) {
+        this.key = key;
     }
 }
